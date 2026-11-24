@@ -1,0 +1,26 @@
+[
+  {
+    "case_id": "rc_step_settling_nominal",
+    "command": [
+      "python3",
+      "-c",
+      "import math; tau=1e-3; t=5e-3; v=1.0*(1-math.exp(-t/tau)); assert abs(v-0.993262)<1e-4; print('OK')"
+    ],
+    "expected_exit_code": 0,
+    "expected_metric": 0.993262,
+    "actual_metric": 0.993262,
+    "abs_tolerance": 1e-5
+  },
+  {
+    "case_id": "rf_link_margin_regression",
+    "command": [
+      "python3",
+      "-c",
+      "print('simulating link budget')"
+    ],
+    "expected_exit_code": 0,
+    "expected_metric": 12.5,
+    "actual_metric": 9.8,
+    "abs_tolerance": 0.5
+  }
+]
